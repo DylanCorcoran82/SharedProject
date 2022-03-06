@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body{ font: 14px sans-serif; }
+        .wrapper{ width: 400px; padding: 20px; }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <h1>IT Carlow's Clubs and Societies</h1>
+        <br>
+        <h2>Welcome!!!</h2>
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+            <form action="/action_page.php">
+  <label for="cars">Please choose from the list of clubs and societies you wish to sign up to</label>
+  <select id="clubs" name="clubs">
+    <option value="computing">Computing</option>
+    <option value="dj">DJ</option>
+    <option value="soccer">Soccer</option>
+    <option value="Basketball">Basketball</option>
+      <option value="Gaming">Gaming</option>
+  </select>
+  <input type="submit" value="Submit">
+</form>
+            <br>
+            <br>
+            <p>Wish to logout? <a href="login.php">Logout here</a>.</p>
+        </form>
+        <div class="form-group">
+                <label>Username</label>
+                <input type="text" name="username" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">
+                <span class="invalid-feedback"><?php echo $username_err; ?></span>
+            </div>
+    </div>    
+</body>
+</html>
